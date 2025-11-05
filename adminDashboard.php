@@ -1,5 +1,5 @@
 <?php
-require_once('php/check_auth.php');
+/*require_once('php/check_auth.php');*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@ require_once('php/check_auth.php');
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/Nidec Institutional Logo_Original Version.png" />
 </head>
 <body>
   <div class="container-scroller"> 
@@ -408,13 +408,13 @@ require_once('php/check_auth.php');
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar proyectos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="revisarProyectos.php">Revisar proyectos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar objetivos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="revisarObjetivos.php">Revisar objetivos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar avances</a></li>
+                <li class="nav-item"> <a class="nav-link" href="revisarAvances.php">Revisar avances</a></li>
               </ul>
             </div>
           </li>

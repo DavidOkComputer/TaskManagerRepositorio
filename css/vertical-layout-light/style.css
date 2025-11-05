@@ -10987,6 +10987,10 @@ textarea.form-control-lg {
   margin-right: 1rem;
 }
 
+.btn-ver-lista-usuarios{
+  margin-left: 50%;
+}
+
 .btn-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
