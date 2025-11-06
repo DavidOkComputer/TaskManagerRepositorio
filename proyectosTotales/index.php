@@ -1,5 +1,8 @@
 <?php
-/*require_once('php/check_auth.php');*/
+/*
+require_once('php/check_auth.php');
+Dashboard principal de admin proyectos pendientes
+*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,21 +13,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Administrador de proyectos </title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
-  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../vendors/feather/feather.css">
+  <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="../vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/Nidec Institutional Logo_Original Version.png" />
+  <link rel="shortcut icon" href="../images/Nidec Institutional Logo_Original Version.png" />
 </head>
 <body>
   <div class="container-scroller"> 
@@ -37,11 +38,11 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="images/Nidec Institutional Logo_Original Version.png" alt="logo" />
+          <a class="navbar-brand brand-logo" href="../adminDashboard">
+            <img src="../images/Nidec Institutional Logo_Original Version.png" alt="logo" />
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="images/Nidec Institutional Logo_Original Version.png" alt="logo" />
+          <a class="navbar-brand brand-logo-mini" href="../adminDashboard">
+            <img src="../images/Nidec Institutional Logo_Original Version.png" alt="logo" />
           </a>
         </div>
       </div>
@@ -142,7 +143,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -151,7 +152,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -160,7 +161,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Desarrollo de calendario </p>
@@ -171,14 +172,17 @@
           </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="Profile image"> </a>
+              <img class="img-xs rounded-circle" src="../images/faces/face8.jpg" alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
+                <img class="img-md rounded-circle" src="../images/faces/face8.jpg" alt="Profile image">
                 <p class="mb-1 mt-3 font-weight-semibold">David Barreto</p>
                 <p class="fw-light text-muted mb-0">david.barreto@nidec.com</p>
               </div>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mi Perfil <span class="badge badge-pill badge-danger">1</span></a>
+              <!--<a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>-->
+              <!--<a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>-->
+              <!--<a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>-->
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Cerrar sesion</a>
             </div>
           </li>
@@ -213,8 +217,12 @@
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="" role="tab" aria-controls="todo-section" aria-expanded="true">Lista de que hacer</a>
+            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">Lista de que hacer</a>
           </li>
+          <!--
+          <li class="nav-item">
+            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
+          </li>-->
         </ul>
         <div class="tab-content" id="setting-content">
           <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
@@ -301,7 +309,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -309,7 +317,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -320,7 +328,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -328,7 +336,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -336,7 +344,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -344,7 +352,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -362,65 +370,66 @@
         <ul class="nav">
           <li class="nav-item nav-category">Empleados</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="menu-icon mdi mdi-account-multiple"></i>
               <span class="menu-title">Empleados</span>
               <i class="menu-arrow"></i> 
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Gestion de empleados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../gestionDeEmpleados">Gestion de empleados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../registroDeEmpleados">Registrar nuevo empleado</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item nav-category">Proyectos</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="menu-icon mdi mdi-folder-upload"></i>
               <span class="menu-title">Crear proyecto</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="">Crear nuevo proyecto</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Crear nuevo objetivo</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Subir avances</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoProyecto">Crear nuevo proyecto</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoObjetivo">Crear nuevo objetivo</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoTarea">Crear nueva tarea</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Graficado</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar graficos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarGraficos">Revisar graficos</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-magnify"></i>
               <span class="menu-title">Revisar Proyectos</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="revisarProyectos.php">Revisar proyectos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarProyectos">Revisar proyectos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="revisarObjetivos.php">Revisar objetivos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarObjetivos">Revisar objetivos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="revisarAvances.php">Revisar avances</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarTareas">Revisar tareas</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item nav-category">Sesión</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="menu-icon mdi mdi-logout"></i>
               <span class="menu-title">Terminar sesión</span>
               <i class="menu-arrow"></i>
@@ -442,16 +451,16 @@
                 <div class="d-sm-flex align-items-center justify-content-between border-bottom">
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Resumen</a>
+                      <a class="nav-link" id="home-tab" href="../adminDashboard" role="tab" aria-controls="overview" aria-selected="false">Resumen</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="profile-tab" href="adminDashboardProyectosTotales.php" role="tab" aria-selected="false">Proyectos totales</a>
+                      <a class="nav-link active ps-0" id="profile-tab" href="../proyectosTotales" role="tab" aria-selected="true">Proyectos totales</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="contact-tab" href="adminDashboardProyectosPendientes.php" role="tab" aria-selected="false">Proyectos pendientes</a>
+                      <a class="nav-link" id="contact-tab" href="../proyectosPendientes" role="tab" aria-selected="false">Proyectos pendientes</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link border-0" id="more-tab"  href="adminDashboardProyectosVencidos.php" role="tab" aria-selected="false">Proyectos vencidos</a>
+                      <a class="nav-link border-0" id="more-tab" href="../proyectosVencidos" role="tab" aria-selected="false">Proyectos vencidos</a>
                     </li>
                   </ul>
                   <div>
@@ -465,55 +474,209 @@
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="statistics-details d-flex align-items-center justify-content-between">
-                          <div>
-                            <p class="statistics-title">Total de objetivos</p>
-                            <h3 class="rate-percentage">20</h3>
-                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5% productividad</span></p>
-                          </div>
-                          <div>
-                            <p class="statistics-title">Total de proyectos</p>
-                            <h3 class="rate-percentage">24</h3>
-                            <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span></p>
-                          </div>
-                          <div>
-                            <p class="statistics-title">Total de avance</p>
-                            <h3 class="rate-percentage">50%</h3>
-                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>20% fehca esperada</span></p>
-                          </div>
-                          <div class="d-none d-md-block">
-                            <p class="statistics-title">Tiempo estimado por avance</p>
-                            <h3 class="rate-percentage">2m:35s</h3>
-                            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                          </div>
-                          <div class="d-none d-md-block">
-                            <p class="statistics-title">Avances por asignar</p>
-                            <h3 class="rate-percentage">12</h3>
-                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>2 asignaciones</span></p>
-                          </div>
-                          <div class="d-none d-md-block">
-                            <p class="statistics-title">Tiempo estimado de cumplimiento</p>
-                            <h3 class="rate-percentage">2m:35s</h3>
-                            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                          </div>
-                        </div>
+                        
                       </div>
                     </div> 
+                    
                     <div class="row">
-                      <div class="col-lg-8 d-flex flex-column">
+                      <div class="col-lg-8 d-flex flex-column"> 
                         <div class="row flex-grow">
-                          <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                          <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
                               <div class="card-body">
                                 <div class="d-sm-flex justify-content-between align-items-start">
                                   <div>
-                                   <h4 class="card-title card-title-dash">Grafica de avances semanales</h4>
-                                   <h5 class="card-subtitle card-subtitle-dash">Avances semanales de proyecto</h5>
+                                    <h4 class="card-title card-title-dash">Proyectos totales</h4>
+                                   <p class="card-subtitle card-subtitle-dash">Tienes 50+ proyectos nuevos</p>
                                   </div>
-                                  <div id="performance-line-legend"></div>
+                                  <div>
+                                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Agregar nuevo proyecto</button>
+                                  </div>
                                 </div>
-                                <div class="chartjs-wrapper mt-5">
-                                  <canvas id="performaneLine"></canvas>
+                                <div class="table-responsive  mt-1">
+                                  <table class="table select-table">
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                              <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </th>
+                                        <th>Titulo</th>
+                                        <th>Descripcion</th>
+                                        <th>Progreso</th>
+                                        <th>Estado</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex ">
+                                            <img src="../images/faces/face1.jpg" alt="">
+                                            <div>
+                                              <h6>Comandos para Windows Update</h6>
+                                              <p>Proyecto</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Hacer actualizaciones de Windows</h6>
+                                          <p>Update desde la consola</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">79%</p>
+                                              <p>8/10</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En progreso</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="../images/faces/face2.jpg" alt="">
+                                            <div>
+                                              <h6>Implementacion XL</h6>
+                                              <p>Area de plasticos</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Implementacion XL</h6>
+                                          <p>Para el area de plasticos</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>7/10</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En progreso</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="../images/faces/face3.jpg" alt="">
+                                            <div>
+                                              <h6>Remplazo de bateria</h6>
+                                              <p>UPS Data Center</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Reemplazo de bateria</h6>
+                                          <p>Data Center UPS autonomia</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>6/10</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-warning" role="progressbar" style="width: 38%" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En progreso</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="../images/faces/face4.jpg" alt="">
+                                            <div>
+                                              <h6>Matthew Bailey</h6>
+                                              <p>Head admin</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Company name 1</h6>
+                                          <p>company type</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>85/162</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-danger">Pending</div></td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="form-check form-check-flat mt-0">
+                                            <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="d-flex">
+                                            <img src="../images/faces/face5.jpg" alt="">
+                                            <div>
+                                              <h6>Katherine Butler</h6>
+                                              <p>Head admin</p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <h6>Company name 1</h6>
+                                          <p>company type</p>
+                                        </td>
+                                        <td>
+                                          <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>85/162</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-success">Completed</div></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
                                 </div>
                               </div>
                             </div>
@@ -522,53 +685,24 @@
                       </div>
                       <div class="col-lg-4 d-flex flex-column">
                         <div class="row flex-grow">
-                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                            <div class="card bg-primary card-rounded">
-                              <div class="card-body pb-0">
-                                <h4 class="card-title card-title-dash text-white mb-4">Resumen de avances</h4>
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
                                 <div class="row">
-                                  <div class="col-sm-4">
-                                    <p class="status-summary-ight-white mb-1">Cumplimiento a la fecha</p>
-                                    <h2 class="text-info">100</h2>
-                                  </div>
-                                  <div class="col-sm-8">
-                                    <div class="status-summary-chart-wrapper pb-4">
-                                      <canvas id="status-summary"></canvas>
+                                  <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                      <h4 class="card-title card-title-dash">Proyecto por estatus</h4>
                                     </div>
+                                    <canvas class="my-auto" id="doughnutChart" height="200"></canvas>
+                                    <div id="doughnut-chart-legend" class="mt-5 text-center"></div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="row">
-                                  <div class="col-sm-6">
-                                    <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
-                                      <div class="circle-progress-width">
-                                        <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
-                                      </div>
-                                      <div>
-                                        <p class="text-small mb-2">Proyecto terminado</p>
-                                        <h4 class="mb-0 fw-bold">60.50%</h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-sm-6">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                      <div class="circle-progress-width">
-                                        <div id="visitperday" class="progressbar-js-circle pr-2"></div>
-                                      </div>
-                                      <div>
-                                        <p class="text-small mb-2">Proyecto pendiente</p>
-                                        <h4 class="mb-0 fw-bold">39.50%</h4>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
                           </div>
                         </div>
                       </div>
@@ -580,13 +714,6 @@
           </div>
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
-          </div>
-        </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -596,24 +723,24 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="../vendors/chart.js/Chart.min.js"></script>
+  <script src="../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="../vendors/progressbar.js/progressbar.min.js"></script>
 
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
+  <script src="../js/off-canvas.js"></script>
+  <script src="../js/hoverable-collapse.js"></script>
+  <script src="../js/template.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
 </body>
 

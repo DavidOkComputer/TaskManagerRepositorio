@@ -19,6 +19,7 @@
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
@@ -37,10 +38,10 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="index.html">
-            <img src="images/Nidec Institutional Logo_Original Version.png" alt="logo" />
+            <img src="../images/Nidec Institutional Logo_Original Version.png" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="images/Nidec Institutional Logo_Original Version.png" alt="logo" />
+            <img src="../images/Nidec Institutional Logo_Original Version.png" alt="logo" />
           </a>
         </div>
       </div>
@@ -48,10 +49,16 @@
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
             <h1 class="welcome-text">Buenos dias, <span class="text-black fw-bold">David</span></h1>
-            <h3 class="welcome-sub-text">Crea y desarrolla nuevos proyectos </h3>
+            <h3 class="welcome-sub-text">Gestiona los proyectos registrados</h3>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <form class="search-form" action="#">
+              <i class="icon-search"></i>
+              <input type="search" class="form-control" placeholder="Buscar usuario" title="Search here">
+            </form>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
               <i class="icon-mail icon-lg"></i>
@@ -85,7 +92,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -94,7 +101,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -103,7 +110,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="../images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Desarrollo de calendario </p>
@@ -114,10 +121,10 @@
           </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="Profile image"> </a>
+              <img class="img-xs rounded-circle" src="../images/faces/face8.jpg" alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
+                <img class="img-md rounded-circle" src="../images/faces/face8.jpg" alt="Profile image">
                 <p class="mb-1 mt-3 font-weight-semibold">David Barreto</p>
                 <p class="fw-light text-muted mb-0">david.barreto@nidec.com</p>
               </div>
@@ -146,8 +153,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="gestionDeEmpleados.php">Gestion de empleados</a></li>
-                <li class="nav-item"> <a class="nav-link" href="registroDeEmpleados.php">Registrar nuevo empleado</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../gestionDeEmpleados">Gestion de empleados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../registroDeEmpleados">Registrar nuevo empleado</a></li>
               </ul>
             </div>
           </li>
@@ -160,9 +167,9 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="nuevoProyecto.php">Crear nuevo proyecto</a></li>
-                <li class="nav-item"><a class="nav-link" href="nuevoObjetivo.php">Crear nuevo objetivo</a></li>
-                <li class="nav-item"><a class="nav-link" href="nuevoAvance.php">Subir avances</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoProyecto">Crear nuevo proyecto</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoObjetivo">Crear nuevo objetivo</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoTarea">Crear nueva tarea</a></li>
               </ul>
             </div>
           </li>
@@ -174,7 +181,7 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar graficos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarGraficos">Revisar graficos</a></li>
               </ul>
             </div>
           </li>
@@ -186,19 +193,19 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="revisarProyecto.php">Revisar proyectos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarProyectos">Revisar proyectos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="revisarObjetivos.php">Revisar objetivos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarObjetivos">Revisar objetivos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="revisarAvances.php">Revisar avances</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarTareas">Revisar tareas</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item nav-category">Sesión</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="menu-icon mdi mdi-logout"></i>
               <span class="menu-title">Terminar sesión</span>
               <i class="menu-arrow"></i>
@@ -212,121 +219,73 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="main-panel">        
-        <div class="content-wrapper">
-          <div class="col-12 grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Crear nuevo proyecto</h4>
-                  <form class="form-sample">
-                    <p class="card-description">
-                      Ingrese la información del proyecto
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Nombre*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Descripción*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Fecha de inicio*</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" placeholder="dd/mm/yyyy"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Fecha de entrega*</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" placeholder="dd/mm/yyyy"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">AR (Opcional)*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Tipo de proyecto*</label>
-                          <div class="col-sm-4">
-                            <div class="form-check form-check-success">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="tipoProyectoRadios" id="tipoProyectoRadios1" value="" checked>
-                                Individual
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-sm-5">
-                            <div class="form-check form-check-success">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="tipoProyectoRadios" id="tipoProyectoRadios2" value="option2">
-                                Grupal
-                              </label>
+      <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                    <h4 class="card-title card-title-dash">Gestion de proyectos</h4>
+                                   <p class="card-subtitle card-subtitle-dash">Revisa y gestiona los proyectos</p>
+                                  </div>
+                                  <div>
+                                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-plus-circle-outline"></i>Crear nuevo proyecto</button>
+                                  </div>
+                                </div>
+                                <div class="table-responsive  mt-1">
+                                  <table class="table select-table">
+                                    <thead>
+                                      <tr>
+                                        <th>#</th>
+                                        <th>Titulo</th>
+                                        <th>Descripcion</th>
+                                        <th>Área</th>
+                                        <th>Fecha de entrega</th>
+                                        <th>Progreso</th>
+                                        <th>Estado</th>
+                                        <th>Asignado a</th>
+                                        <th>Acciones</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>                           
+                                        <td>
+                                            <h6>1</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Comandos para Windows Update</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Hacer actualizaciones de Windows Update desde la consola</h6>
+                                        </td>
+                                        <td>
+                                          <h6>TI</h6>
+                                        </td>
+                                        <td>
+                                          <h6>11/05/2025</h6>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>6/10</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-warning" role="progressbar" style="width: 38%" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En progreso</div></td>
+                                        <td><h6>Felipe Mireles</h6></td>
+                                        <td>Editar Eliminar Progreso</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                            <label for="subirArchivo" class="col-sm-3 col-form-label">Subir archivo</label>
-                            <input type="file" name="img[]" class="file-upload-default">
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" disabled placeholder="Seleccione el archivo para subir">
-                                <span class="input-group-append">
-                                <button class="file-upload-browse btn btn-success" type="button">Subir</button>
-                                </span>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Asignar a*</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>Ninguno</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <button type="submit" class="btn btn-success">Crear</button>
-                        <button class="btn btn-light">Cancelar</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </div>
-        <!-- content-wrapper ends -->
-        <!-- partial -->
-      </div>
       <!-- main-panel ends -->
     </div>
         <!-- content-wrapper ends --> 
@@ -338,15 +297,22 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
+   
+  <script src="../vendors/chart.js/Chart.min.js"></script>
+  <script src="../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="../vendors/progressbar.js/progressbar.min.js"></script>
   <!-- inject:js -->
-  <script src="js/template.js"></script>
+  <script src="../js/off-canvas.js"></script>
+  <script src="../js/hoverable-collapse.js"></script>
+  <script src="../js/template.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/file-upload.js"></script>
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
 </body>
 </html>
