@@ -414,17 +414,17 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar objetivos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="revisarProyectos.php">Revisar proyectos</a></li>
               </ul>
             </div>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar proyectos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="revisarObjetivos.php">Revisar objetivos</a></li>
               </ul>
             </div>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Revisar avances</a></li>
+                <li class="nav-item"> <a class="nav-link" href="revisarTareas.php">Revisar tareas</a></li>
               </ul>
             </div>
           </li>
