@@ -240,7 +240,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Apellido*</label>
+                          <label class="col-sm-3 col-form-label">Descripción*</label>
                           <div class="col-sm-9">
                             <input type="text" class="form-control" />
                           </div>
@@ -250,17 +250,17 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Nombre de usuario*</label>
+                          <label class="col-sm-3 col-form-label">Fecha de inicio*</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
+                            <input class="form-control" placeholder="dd/mm/yyyy"/>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Contraseña*</label>
+                          <label class="col-sm-3 col-form-label">Fecha de entrega*</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" />
+                            <input class="form-control" placeholder="dd/mm/yyyy"/>
                           </div>
                         </div>
                       </div>
@@ -268,7 +268,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Num de empleado*</label>
+                          <label class="col-sm-3 col-form-label">AR (Opcional)*</label>
                           <div class="col-sm-9">
                             <input type="text" class="form-control"/>
                           </div>
@@ -276,36 +276,28 @@
                       </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Rol*</label>
+                            <label class="col-sm-3 col-form-label">Asignar a*</label>
                             <div class="col-sm-9">
                               <select class="form-control">
                                 <option>Ninguno</option>
                               </select>
                             </div>
                           </div>
-                        </div>
+                      </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Departamento*</label>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                            <label for="subirArchivo" class="col-sm-3 col-form-label">Subir archivo</label>
+                            <input type="file" name="img[]" class="file-upload-default">
                             <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
+                                <input type="text" class="form-control" disabled placeholder="Seleccione el archivo para subir">
+                                <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-success" type="button">Subir</button>
+                                </span>
                             </div>
-                          </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Superior*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
+                      </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">

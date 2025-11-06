@@ -8,7 +8,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Administrador de proyectos </title>
+  <title>Administrador de objetivos</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -17,8 +17,6 @@
   <link rel="stylesheet" href="../vendors/simple-line-icons/css/simple-line-icons.css">
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <!-- endinject -->
@@ -47,10 +45,16 @@
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
             <h1 class="welcome-text">Buenos dias, <span class="text-black fw-bold">David</span></h1>
-            <h3 class="welcome-sub-text">Expande la lista de usuarios</h3>
+            <h3 class="welcome-sub-text">Gestiona los objetivos registrados</h3>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <form class="search-form" action="#">
+              <i class="icon-search"></i>
+              <input type="search" class="form-control" placeholder="Buscar usuario" title="Search here">
+            </form>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
               <i class="icon-mail icon-lg"></i>
@@ -211,110 +215,75 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="main-panel">        
-        <div class="content-wrapper">
-          <div class="col-12 grid-margin stretch-card">
+      <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
                             <div class="card card-rounded">
                               <div class="card-body">
                                 <div class="d-sm-flex justify-content-between align-items-start">
                                   <div>
-                                    <h4 class="card-title card-title-dash">Registrar nuevo usuario</h4>
-                                   <p class="card-subtitle card-subtitle-dash">Ingresa la información del nuevo usuario</p>
+                                    <h4 class="card-title card-title-dash">Gestion de objetivos</h4>
+                                   <p class="card-subtitle card-subtitle-dash">Revisa y gestiona los objetivos</p>
                                   </div>
                                   <div>
-                                    <a href="../gestionDeEmpleados">
-                                      <button class="btn btn-success btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-multiple"></i>Ver lista de usuarios</button>
+                                    <a href="../nuevoObjetivo">
+                                    <button class="btn btn-success btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-plus-circle-outline"></i>Crear nuevo objetivo</button>
                                     </a>
                                   </div>
                                 </div>
-                                <div><br></div>
-                                <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Nombre*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Apellido*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Nombre de usuario*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Contraseña*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Num de empleado*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Rol*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
+                                <div class="table-responsive  mt-1">
+                                  <table class="table select-table">
+                                    <thead>
+                                      <tr>
+                                        <th>#</th>
+                                        <th>Titulo</th>
+                                        <th>Descripcion</th>
+                                        <th>Área</th>
+                                        <th>Fecha de entrega</th>
+                                        <th>Progreso</th>
+                                        <th>Estado</th>
+                                        <th>Asignado a</th>
+                                        <th>Acciones</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>                           
+                                        <td>
+                                            <h6>1</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Comandos para Windows Update</h6>
+                                        </td>
+                                        <td>
+                                            <h6>Hacer actualizaciones de Windows Update desde la consola</h6>
+                                        </td>
+                                        <td>
+                                          <h6>TI</h6>
+                                        </td>
+                                        <td>
+                                          <h6>11/05/2025</h6>
+                                        </td>
+                                        <td>
+                                            <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
+                                              <p class="text-success">65%</p>
+                                              <p>6/10</p>
+                                            </div>
+                                            <div class="progress progress-md">
+                                              <div class="progress-bar bg-warning" role="progressbar" style="width: 38%" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td><div class="badge badge-opacity-warning">En progreso</div></td>
+                                        <td><h6>Felipe Mireles</h6></td>
+                                        <td>Editar Eliminar Progreso</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Departamento*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Superior*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <button type="submit" class="btn btn-success">Crear</button>
-                        <button class="btn btn-light">Cancelar</button>
-                      </div>
-                    </div>
-        <!-- content-wrapper ends -->
-        <!-- partial -->
-      </div>
       <!-- main-panel ends -->
     </div>
         <!-- content-wrapper ends --> 
@@ -328,12 +297,20 @@
   <!-- plugins:js -->
   <script src="../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
+   
+  <script src="../vendors/chart.js/Chart.min.js"></script>
+  <script src="../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="../vendors/progressbar.js/progressbar.min.js"></script>
   <!-- inject:js -->
+  <script src="../js/off-canvas.js"></script>
+  <script src="../js/hoverable-collapse.js"></script>
   <script src="../js/template.js"></script>
+  <script src="../js/settings.js"></script>
+  <script src="../js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="../js/file-upload.js"></script>
   <script src="../js/dashboard.js"></script>
+  <script src="../js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
 </body>
 </html>

@@ -8,7 +8,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Administrador de proyectos </title>
+  <title>Administrador de tareas </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -47,7 +47,7 @@
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
             <h1 class="welcome-text">Buenos dias, <span class="text-black fw-bold">David</span></h1>
-            <h3 class="welcome-sub-text">Expande la lista de usuarios</h3>
+            <h3 class="welcome-sub-text">Crea y desarrolla nuevas tareas </h3>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -191,7 +191,7 @@
                 <li class="nav-item"> <a class="nav-link" href="../revisarObjetivos">Revisar objetivos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../revisarTareas">Revisar tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarTarea">Revisar tareas</a></li>
               </ul>
             </div>
           </li>
@@ -213,105 +213,89 @@
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
-          <div class="col-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-start">
-                                  <div>
-                                    <h4 class="card-title card-title-dash">Registrar nuevo usuario</h4>
-                                   <p class="card-subtitle card-subtitle-dash">Ingresa la información del nuevo usuario</p>
-                                  </div>
-                                  <div>
-                                    <a href="../gestionDeEmpleados">
-                                      <button class="btn btn-success btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-multiple"></i>Ver lista de usuarios</button>
-                                    </a>
+          <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Asignación de tareas para proyectos</h4>
+                  <p class="card-description">Asigne las tareas a desarrollar dentro del proyecto</p>
+                  <hr>
+                  <div class="row">
+                      <div class="col-bg-12">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Seleccione el proyecto</label>
+                          <div class="col-sm-9">
+                            <select class="form-control">
+                              <option>Ninguno</option>
+                            </select>
+                          </div>
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <h4 class="card-title card-title-dash">Lista de tareas</h4>
+                                      <div class="add-items d-flex mb-0">
+                                        <!-- <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?"> -->
+                                        <button class="add btn btn-icons btn-rounded btn-primary todo-list-add-btn text-white me-0 pl-12p"><i class="mdi mdi-plus"></i></button>
+                                      </div>
+                                    </div>
+                                    <div class="list-wrapper">
+                                      <ul class="todo-list todo-list-rounded">
+                                        <li class="d-block">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Digitalizacion de captura de produccion <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">24-Dic-2025</div>
+                                              <div class="badge badge-opacity-warning me-3">Para mañana </div>
+                                              <i class="mdi mdi-flag ms-2 flag-color"></i>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li class="d-block">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Implementacion Polycom <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">01 Enero 2026</div>
+                                              <div class="badge badge-opacity-success me-3">Completado</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li>
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Curso de seguridad IA <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">06 Dic 2025</div>
+                                              <div class="badge badge-opacity-success me-3">Completado</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li class="border-bottom-0">
+                                          <div class="form-check w-100">
+                                            <label class="form-check-label">
+                                              <input class="checkbox" type="checkbox"> Desarrollo Instructivos de trabajo <i class="input-helper rounded"></i>
+                                            </label>
+                                            <div class="d-flex mt-2">
+                                              <div class="ps-4 text-small me-3">03 Nov 2022</div>
+                                              <div class="badge badge-opacity-danger me-3">Expirado</div>
+                                            </div>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </div>
                                   </div>
                                 </div>
-                                <div><br></div>
-                                <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Nombre*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Apellido*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Nombre de usuario*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Contraseña*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Num de empleado*</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control"/>
-                          </div>
-                        </div>
-                      </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Rol*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Departamento*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Superior*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <button type="submit" class="btn btn-success">Crear</button>
-                        <button class="btn btn-light">Cancelar</button>
-                      </div>
-                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
         <!-- content-wrapper ends -->
         <!-- partial -->
       </div>
@@ -335,5 +319,6 @@
   <script src="../js/file-upload.js"></script>
   <script src="../js/dashboard.js"></script>
   <!-- End custom js for this page-->
+   <script src="../js/task-modal.js"></script>
 </body>
 </html>

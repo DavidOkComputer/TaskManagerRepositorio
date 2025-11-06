@@ -17,9 +17,6 @@
   <link rel="stylesheet" href="../vendors/simple-line-icons/css/simple-line-icons.css">
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <!-- endinject -->
@@ -352,7 +349,6 @@
   <!-- Custom js for this page-->
   <script src="../js/file-upload.js"></script>
   <script src="../js/dashboard.js"></script>
-  <script src="../js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
 </body>
 </html>
