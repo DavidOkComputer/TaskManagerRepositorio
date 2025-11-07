@@ -1,12 +1,10 @@
 <?php
-// get_projects.php - Retrieves all projects from the database for nueva tarea and maybe proyect list
+// get_projects.php 
 
 header('Content-Type: application/json');
 
-// Include database configuration
 require_once('db_config.php');
 
-// Check if request method is GET
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     echo json_encode([
         'success' => false,
@@ -16,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 try {
-    // Query to get all projects
+    //query para ver todos los proyectos
     $query = "SELECT id_proyecto, nombre FROM tbl_proyectos ORDER BY nombre ASC";
     $result = $conn->query($query);
     
@@ -38,7 +36,6 @@ try {
         'projects' => $projects
     ]);
     
-    // Free result
     $result->free();
     
 } catch (Exception $e) {
@@ -49,6 +46,5 @@ try {
     ]);
 }
 
-// Close connection
 $conn->close();
 ?>

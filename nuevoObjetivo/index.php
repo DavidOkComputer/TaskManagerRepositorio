@@ -5,7 +5,7 @@
 // For now using placeholder values
 $user_name = "David";
 $user_email = "david.barreto@nidec.com";
-$user_id = 1; // This should come from your session
+$user_id = 1; //usuario viene de la sesion
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -140,7 +140,7 @@ $user_id = 1; // This should come from your session
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item nav-category">Empleados</li>
+          <li class="nav-item nav-category">Gestion de usuarios</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="menu-icon mdi mdi-account-multiple"></i>
@@ -149,8 +149,21 @@ $user_id = 1; // This should come from your session
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../gestionDeEmpleados">Gestion de empleados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../gestionDeEmpleados/">Gestion de empleados</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../registroDeEmpleados">Registrar nuevo empleado</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#departamentos" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-view-week"></i>
+              <span class="menu-title">Departamentos</span>
+              <i class="menu-arrow"></i> 
+            </a>
+            <div class="collapse" id="departamentos">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../gestionDeDepartamentos/">Gestion de departamentos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../registroDeDepartamentos">Registrar departamento</a></li>
               </ul>
             </div>
           </li>
@@ -163,9 +176,9 @@ $user_id = 1; // This should come from your session
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../nuevoProyecto">Crear nuevo proyecto</a></li>
-                <li class="nav-item"><a class="nav-link" href="../nuevoObjetivo">Crear nuevo objetivo</a></li>
-                <li class="nav-item"><a class="nav-link" href="../nuevoTarea">Crear nueva tarea</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoProyecto/">Crear nuevo proyecto</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoObjetivo/">Crear nuevo objetivo</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoTarea/">Crear nueva tarea</a></li>
               </ul>
             </div>
           </li>
@@ -189,13 +202,13 @@ $user_id = 1; // This should come from your session
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../revisarProyectos">Revisar proyectos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarProyectos/">Revisar proyectos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../revisarObjetivos">Revisar objetivos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarObjetivos/">Revisar objetivos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../revisarTareas">Revisar tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarTareas/">Revisar tareas</a></li>
               </ul>
             </div>
           </li>
@@ -208,7 +221,7 @@ $user_id = 1; // This should come from your session
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Cerrar Sesión</a></li>
+                <li class="nav-item"> <a class="nav-link" href=""> Cerrar Sesión </a></li>
               </ul>
             </div>
           </li>
@@ -275,6 +288,21 @@ $user_id = 1; // This should come from your session
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Fecha de inicio<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                          <input 
+                            type="date" 
+                            class="form-control"
+                            id="fecha_cumplimiento"
+                            name="fecha_cumplimiento"
+                            required
+                          />
+                          <small class="form-text text-muted">Seleccione la fecha de inicio de este objetivo</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Fecha de cumplimiento<span class="text-danger">*</span></label>
                         <div class="col-sm-9">
                           <input 
@@ -288,24 +316,7 @@ $user_id = 1; // This should come from your session
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Departamento<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                          <select 
-                            class="form-control"
-                            id="id_departamento"
-                            name="id_departamento"
-                            required
-                          >
-                            <option value="">Seleccione un departamento</option>
-                            <!-- Options will be loaded dynamically via JavaScript -->
-                          </select>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
@@ -343,12 +354,28 @@ $user_id = 1; // This should come from your session
                             />
                             <button class="btn btn-success file-upload-browse" type="button">Subir</button>
                           </div>
-                          <small class="form-text text-muted">Archivos permitidos: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG, ZIP (máx. 10MB)</small>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Departamento<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                          <select 
+                            class="form-control"
+                            id="id_departamento"
+                            name="id_departamento"
+                            required
+                          >
+                            <option value="">Seleccione un departamento</option>
+                            <!-- Las opciones se muestran con JavaScript -->
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -389,7 +416,7 @@ $user_id = 1; // This should come from your session
   <script src="../js/file-upload.js"></script>
   <script src="../js/dashboard.js"></script>
   <!-- Custom js for objective form -->
-  <script src="../js/objetivo-form.js"></script>
+  <script src="../js/objetivo_form.js"></script>
   <!-- End custom js for this page-->
   
   <script>

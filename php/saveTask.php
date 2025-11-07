@@ -1,12 +1,11 @@
 <?php
-// save_task.php - Handles saving new tasks to the database
+// save_task.php
 
 header('Content-Type: application/json');
 
-// Include database configuration
+//incluir configuracion de db
 require_once('db_config.php');
 
-// Check if request method is POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode([
         'success' => false,
@@ -15,12 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Get POST data
 $nombre = isset($_POST['nombre']) ? trim($_POST['nombre']) : '';
 $descripcion = isset($_POST['descripcion']) ? trim($_POST['descripcion']) : '';
 $id_proyecto = isset($_POST['id_proyecto']) ? intval($_POST['id_proyecto']) : 0;
 
-// Validate required fields
 if (empty($nombre)) {
     echo json_encode([
         'success' => false,
@@ -45,7 +42,6 @@ if ($id_proyecto <= 0) {
     exit;
 }
 
-// Validate field lengths
 if (strlen($nombre) > 100) {
     echo json_encode([
         'success' => false,
@@ -63,17 +59,15 @@ if (strlen($descripcion) > 250) {
 }
 
 try {
-    // Prepare SQL statement
+    //se prepara la query sql
     $stmt = $conn->prepare("INSERT INTO tbl_tareas (nombre, descripcion, id_proyecto) VALUES (?, ?, ?)");
     
     if (!$stmt) {
         throw new Exception("Error al preparar la consulta: " . $conn->error);
     }
     
-    // Bind parameters
     $stmt->bind_param("ssi", $nombre, $descripcion, $id_proyecto);
     
-    // Execute statement
     if ($stmt->execute()) {
         $task_id = $stmt->insert_id;
         
@@ -86,7 +80,6 @@ try {
         throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
     }
     
-    // Close statement
     $stmt->close();
     
 } catch (Exception $e) {
@@ -96,6 +89,5 @@ try {
     ]);
 }
 
-// Close connection
 $conn->close();
 ?>

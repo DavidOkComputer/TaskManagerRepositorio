@@ -97,16 +97,6 @@ Dashboard principal de admin
                 <p class="mb-0 font-weight-medium float-left">Tienes nuevas notificaciones</p>
                 <span class="badge badge-pill badge-primary float-right">Ver todo</span>
               </a>
-              <!--
-              <a class="dropdown-item preview-item py-3">
-                <div class="preview-thumbnail">
-                  <i class="mdi mdi-alert m-auto text-primary"></i>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject fw-normal text-dark mb-1">Application Error</h6>
-                  <p class="fw-light small-text mb-0"> Just now </p>
-                </div>
-              </a>-->
               <a class="dropdown-item preview-item py-3">
                 <div class="preview-thumbnail">
                   <i class="mdi mdi-settings m-auto text-primary"></i>
@@ -116,17 +106,6 @@ Dashboard principal de admin
                   <p class="fw-light small-text mb-0">Configurar distintos ajustes</p>
                 </div>
               </a>
-              <!--
-              <a class="dropdown-item preview-item py-3">
-                <div class="preview-thumbnail">
-                  <i class="mdi mdi-airballoon m-auto text-primary"></i>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject fw-normal text-dark mb-1">New user registration</h6>
-                  <p class="fw-light small-text mb-0"> 2 days ago </p>
-                </div>
-              </a>
-              -->
             </div>
           </li>
           <li class="nav-item dropdown"> 
@@ -360,7 +339,7 @@ Dashboard principal de admin
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item nav-category">Empleados</li>
+          <li class="nav-item nav-category">Gestion de usuarios</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="menu-icon mdi mdi-account-multiple"></i>
@@ -369,8 +348,21 @@ Dashboard principal de admin
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../gestionDeEmpleados">Gestion de empleados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../gestionDeEmpleados/">Gestion de empleados</a></li>
                 <li class="nav-item"> <a class="nav-link" href="../registroDeEmpleados">Registrar nuevo empleado</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#departamentos" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-view-week"></i>
+              <span class="menu-title">Departamentos</span>
+              <i class="menu-arrow"></i> 
+            </a>
+            <div class="collapse" id="departamentos">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../gestionDeDepartamentos/">Gestion de departamentos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../registroDeDepartamentos">Registrar departamento</a></li>
               </ul>
             </div>
           </li>
@@ -383,9 +375,9 @@ Dashboard principal de admin
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../nuevoProyecto">Crear nuevo proyecto</a></li>
-                <li class="nav-item"><a class="nav-link" href="../nuevoObjetivo">Crear nuevo objetivo</a></li>
-                <li class="nav-item"><a class="nav-link" href="../nuevoTarea">Crear nueva tarea</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoProyecto/">Crear nuevo proyecto</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoObjetivo/">Crear nuevo objetivo</a></li>
+                <li class="nav-item"><a class="nav-link" href="../nuevoTarea/">Crear nueva tarea</a></li>
               </ul>
             </div>
           </li>
@@ -409,13 +401,13 @@ Dashboard principal de admin
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../revisarProyecto">Revisar proyectos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarProyectos/">Revisar proyectos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../revisarObjetivo">Revisar objetivos</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarObjetivos/">Revisar objetivos</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../revisarTareas">Revisar tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../revisarTareas/">Revisar tareas</a></li>
               </ul>
             </div>
           </li>

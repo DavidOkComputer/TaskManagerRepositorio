@@ -233,8 +233,8 @@ ALTER TABLE `tbl_usuarios`
   MODIFY `apellido` varchar(100) NOT NULL,
   MODIFY `usuario` varchar(100) NOT NULL;
 
-  ALTER TABLE 'tbl_proyectos'
-  MODIFY 'descripcion' varchar(200) NOT NULL;
+  ALTER TABLE `tbl_proyectos`
+  MODIFY `descripcion` varchar(200) NOT NULL;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

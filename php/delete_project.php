@@ -1,24 +1,22 @@
 <?php
 header('Content-Type: application/json');
 
-// Database connection parameters
+// conexion a la base de datos
 $servername = "localhost";
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$dbname = "your_database_name"; // Change this to your database name
+$username = "root";
+$password = ""; 
+$dbname = "task_management_db";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die(json_encode(['success' => false, 'error' => 'Connection failed: ' . $conn->connect_error]));
 }
 
-// Set charset to utf8mb4
+
 $conn->set_charset("utf8mb4");
 
-// Get the JSON data from the request
 $data = json_decode(file_get_contents('php://input'), true);
 
 if (!isset($data['id_proyecto'])) {
@@ -28,7 +26,6 @@ if (!isset($data['id_proyecto'])) {
 
 $id_proyecto = intval($data['id_proyecto']);
 
-// Prepare and execute the delete statement
 $stmt = $conn->prepare("DELETE FROM tbl_proyectos WHERE id_proyecto = ?");
 $stmt->bind_param("i", $id_proyecto);
 

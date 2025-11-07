@@ -1,20 +1,15 @@
-// objetivo-form.js - Handle objective creation form
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Load departments on page load
-    loadDepartamentos();
+    loadDepartamentos();//cargar departamentos al cargar la pagina
     
-    // Initialize file upload
-    initFileUpload();
+    initFileUpload();//inicializar carga de pagina
     
-    // Form submission handler
-    const form = document.getElementById('formCrearObjetivo');
+    const form = document.getElementById('formCrearObjetivo');//maneja la creacion del form
     if (form) {
         form.addEventListener('submit', handleFormSubmit);
     }
     
-    // Cancel button handler
-    const cancelBtn = document.querySelector('.btn-light');
+    const cancelBtn = document.querySelector('.btn-light');//manejo del boton cancelar
     if (cancelBtn) {
         cancelBtn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -26,20 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/**
- * Load departments from database and populate dropdown
- */
-function loadDepartamentos() {
+function loadDepartamentos() { //obtener items de la base de datos
     fetch('../php/get_departamentos.php')
         .then(response => response.json())
         .then(data => {
             if (data.success) {
                 const select = document.getElementById('id_departamento');
                 
-                // Clear existing options except the first one
+                //limpiar las opciones existentes menos la actual
                 select.innerHTML = '<option value="">Seleccione un departamento</option>';
                 
-                // Add departments
+                //agregar departamento
                 data.data.forEach(dept => {
                     const option = document.createElement('option');
                     option.value = dept.id;
@@ -56,9 +48,6 @@ function loadDepartamentos() {
         });
 }
 
-/**
- * Initialize file upload functionality
- */
 function initFileUpload() {
     const fileInput = document.querySelector('.file-upload-default');
     const fileLabel = document.getElementById('fileUploadLabel');
@@ -79,38 +68,31 @@ function initFileUpload() {
     }
 }
 
-/**
- * Handle form submission
- */
-function handleFormSubmit(e) {
+function handleFormSubmit(e) {//manejo de informacion del form
     e.preventDefault();
     
-    // Get form data
     const formData = new FormData(this);
     
-    // Get file input
     const fileInput = document.querySelector('.file-upload-default');
     if (fileInput && fileInput.files.length > 0) {
         formData.append('archivo', fileInput.files[0]);
     }
-    
-    // Add creator ID (you should get this from session or user data)
-    // For now, using a placeholder - replace with actual logged-in user ID
-    const idCreador = getUserId(); // Implement this function based on your auth system
+    //se agrega el ID del creador (se obtiene desde la sesion)
+    const idCreador = getUserId();
     formData.append('id_creador', idCreador);
     
-    // Validate form
+    //validar el form
     if (!validateForm(formData)) {
         return;
     }
     
-    // Show loading state
+    //se muestra el estado de carga
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Creando...';
     
-    // Submit form
+    //subir form
     fetch('../php/crear_objetivo.php', {
         method: 'POST',
         body: formData
@@ -120,12 +102,12 @@ function handleFormSubmit(e) {
         if (data.success) {
             showNotification('Objetivo creado exitosamente', 'success');
             
-            // Reset form after 1 second
+            //reiniciar form despues de un segundo
             setTimeout(() => {
                 this.reset();
                 document.getElementById('fileUploadLabel').value = '';
                 
-                // Optionally redirect to objectives list
+                //si se quiere redirigir a la lista de objetivos de manera automatica
                 // window.location.href = '../revisarObjetivos';
             }, 1500);
         } else {
@@ -137,15 +119,12 @@ function handleFormSubmit(e) {
         showNotification('Error al crear el objetivo. Por favor, intente nuevamente.', 'error');
     })
     .finally(() => {
-        // Restore button state
+        //restaurar el estado original del boton
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
     });
 }
 
-/**
- * Validate form data
- */
 function validateForm(formData) {
     const nombre = formData.get('nombre');
     const descripcion = formData.get('descripcion');
@@ -183,7 +162,7 @@ function validateForm(formData) {
         return false;
     }
     
-    // Validate date is in the future
+    //validar que la fecha de cumplimiento es en el futuro
     const selectedDate = new Date(fecha_cumplimiento);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -200,7 +179,7 @@ function validateForm(formData) {
         return false;
     }
     
-    // Validate file size if present
+    //validar el tamaño del archivo que se sube
     const fileInput = document.querySelector('.file-upload-default');
     if (fileInput && fileInput.files.length > 0) {
         const file = fileInput.files[0];
@@ -216,31 +195,22 @@ function validateForm(formData) {
 }
 
 /**
- * Get user ID from session or local storage
- * TODO: Implement this based on your authentication system
+ * tomar el Id de la sesion
+ * implementar basado en el sistema de autenticacion
  */
 function getUserId() {
-    // This is a placeholder - implement based on your auth system
-    // You might get this from:
-    // - A hidden input field
-    // - Session storage
-    // - A global JavaScript variable set by PHP
-    // - An API call
     
-    // Example: return sessionStorage.getItem('userId');
-    // For now, returning a default value
-    return 1; // Replace with actual user ID
+    //return sessionStorage.getItem('userId');
+    // uso de id default 
+    return 1; // se remplaza con id que se toma de la sesion
 }
 
-/**
- * Show notification to user
- */
 function showNotification(message, type = 'info') {
-    // Check if a notification container exists
+    //revisar si existe el container para la notificacion
     let container = document.getElementById('notificationContainer');
     
     if (!container) {
-        // Create notification container
+        //creacion de container para notificaciones
         container = document.createElement('div');
         container.id = 'notificationContainer';
         container.style.cssText = `
@@ -253,7 +223,7 @@ function showNotification(message, type = 'info') {
         document.body.appendChild(container);
     }
     
-    // Create notification element
+    //crear elemento de notificaciones
     const notification = document.createElement('div');
     notification.className = `alert alert-${getAlertClass(type)} alert-dismissible fade show`;
     notification.setAttribute('role', 'alert');
@@ -264,16 +234,13 @@ function showNotification(message, type = 'info') {
     
     container.appendChild(notification);
     
-    // Auto-remove after 5 seconds
+    //auto remover despues de 5 segundos
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => notification.remove(), 150);
     }, 5000);
 }
 
-/**
- * Get Bootstrap alert class based on type
- */
 function getAlertClass(type) {
     const classes = {
         'success': 'success',
@@ -284,9 +251,6 @@ function getAlertClass(type) {
     return classes[type] || 'info';
 }
 
-/**
- * Get alert title based on type
- */
 function getAlertTitle(type) {
     const titles = {
         'success': '¡Éxito!',
@@ -297,9 +261,6 @@ function getAlertTitle(type) {
     return titles[type] || 'Aviso:';
 }
 
-/**
- * Character counter for text inputs
- */
 function setupCharacterCounters() {
     const nombreInput = document.getElementById('nombre');
     const descripcionInput = document.getElementById('descripcion');
@@ -334,5 +295,4 @@ function addCharacterCounter(input, maxLength) {
     });
 }
 
-// Initialize character counters when DOM is ready
 document.addEventListener('DOMContentLoaded', setupCharacterCounters);

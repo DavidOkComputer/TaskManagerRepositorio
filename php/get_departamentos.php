@@ -4,7 +4,6 @@ require_once('db_config.php');
 
 $conn = getDBConnection();
 
-// Query to get all departments
 $sql = "SELECT id_departamento, nombre FROM tbl_departamentos ORDER BY nombre ASC";
 $result = $conn->query($sql);
 
