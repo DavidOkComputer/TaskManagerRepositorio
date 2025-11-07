@@ -217,6 +217,25 @@ ALTER TABLE `tbl_usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
+
+ALTER TABLE `tbl_proyectos` 
+  MODIFY `progreso` int(11) NOT NULL DEFAULT 0,
+  MODIFY `estado` enum('pendiente','en proceso','vencido','completado') NOT NULL DEFAULT 'pendiente';
+
+-- Fix tbl_tipo_proyecto
+ALTER TABLE `tbl_tipo_proyecto` 
+  MODIFY `nombre` varchar(100) NOT NULL,
+  MODIFY `descripcion` varchar(200) NOT NULL;
+
+-- Fix tbl_usuarios
+ALTER TABLE `tbl_usuarios` 
+  MODIFY `nombre` varchar(100) NOT NULL,
+  MODIFY `apellido` varchar(100) NOT NULL,
+  MODIFY `usuario` varchar(100) NOT NULL;
+
+  ALTER TABLE 'tbl_proyectos'
+  MODIFY 'descripcion' varchar(200) NOT NULL;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

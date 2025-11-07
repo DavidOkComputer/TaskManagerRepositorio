@@ -1,14 +1,20 @@
 <?php
 /*require_once('php/check_auth.php');*/
+
+// Get user information from session (implement based on your auth system)
+// For now using placeholder values
+$user_name = "David";
+$user_email = "david.barreto@nidec.com";
+$user_id = 1; // This should come from your session
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Administrador de objetivos </title>
+  <title>Administrador de objetivos</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/feather/feather.css">
   <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
@@ -44,8 +50,8 @@
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Buenos dias, <span class="text-black fw-bold">David</span></h1>
-            <h3 class="welcome-sub-text">Crea y desarrolla nuevos objetivos </h3>
+            <h1 class="welcome-text">Buenos dias, <span class="text-black fw-bold"><?php echo htmlspecialchars($user_name); ?></span></h1>
+            <h3 class="welcome-sub-text">Crea y desarrolla nuevos objetivos</h3>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -76,7 +82,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
               <a class="dropdown-item py-3">
-                <p class="mb-0 font-weight-medium float-left">Tienes nuevas notificaciones </p>
+                <p class="mb-0 font-weight-medium float-left">Tienes nuevas notificaciones</p>
                 <span class="badge badge-pill badge-primary float-right">Ver todo</span>
               </a>
               <div class="dropdown-divider"></div>
@@ -85,8 +91,8 @@
                   <img src="../images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                  <p class="fw-light small-text mb-0"> Requiere de avances </p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner</p>
+                  <p class="fw-light small-text mb-0">Requiere de avances</p>
                 </div>
               </a>
               <a class="dropdown-item preview-item">
@@ -94,8 +100,8 @@
                   <img src="../images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                  <p class="fw-light small-text mb-0"> Requiere de avances </p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey</p>
+                  <p class="fw-light small-text mb-0">Requiere de avances</p>
                 </div>
               </a>
               <a class="dropdown-item preview-item">
@@ -103,8 +109,8 @@
                   <img src="../images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">Desarrollo de calendario </p>
-                  <p class="fw-light small-text mb-0"> Requiere de avances </p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Desarrollo de calendario</p>
+                  <p class="fw-light small-text mb-0">Requiere de avances</p>
                 </div>
               </a>
             </div>
@@ -115,8 +121,8 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="../images/faces/face8.jpg" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">David Barreto</p>
-                <p class="fw-light text-muted mb-0">david.barreto@nidec.com</p>
+                <p class="mb-1 mt-3 font-weight-semibold"><?php echo htmlspecialchars($user_name); ?> Barreto</p>
+                <p class="fw-light text-muted mb-0"><?php echo htmlspecialchars($user_email); ?></p>
               </div>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mi Perfil <span class="badge badge-pill badge-danger">1</span></a>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Cerrar sesion</a>
@@ -202,7 +208,7 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href=""> Cerrar Sesión </a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Cerrar Sesión</a></li>
               </ul>
             </div>
           </li>
@@ -212,106 +218,160 @@
       <div class="main-panel">        
         <div class="content-wrapper">
           <div class="col-12 grid-margin stretch-card">
-                            <div class="card card-rounded">
-                              <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-start">
-                                  <div>
-                                    <h4 class="card-title card-title-dash">Gestion de objetivos</h4>
-                                   <p class="card-subtitle card-subtitle-dash">Revisa y gestiona los objetivos</p>
-                                  </div>
-                                  <div>
-                                    <a href="../revisarObjetivos">
-                                      <button class="btn btn-success btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-checkbox-multiple-marked"></i>Ver lista de objetivos</button>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div><br></div>
-                                <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nombre*</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control"/>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Descripción*</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Fecha de inicio*</label>
-                            <div class="col-sm-9">
-                              <input class="form-control" placeholder="dd/mm/yyyy"/>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Fecha de entrega*</label>
-                            <div class="col-sm-9">
-                              <input class="form-control" placeholder="dd/mm/yyyy"/>
-                            </div>
-                          </div>
+            <div class="card card-rounded">
+              <div class="card-body">
+                <div class="d-sm-flex justify-content-between align-items-start">
+                  <div>
+                    <h4 class="card-title card-title-dash">Gestion de objetivos</h4>
+                    <p class="card-subtitle card-subtitle-dash">Crea un nuevo objetivo para tu departamento</p>
+                  </div>
+                  <div>
+                    <a href="../revisarObjetivos">
+                      <button class="btn btn-success btn-lg text-white mb-0 me-0" type="button">
+                        <i class="mdi mdi-checkbox-multiple-marked"></i>Ver lista de objetivos
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <div><br></div>
+                
+                <!-- FORM START -->
+                <form id="formCrearObjetivo" method="POST" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Nombre<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                          <input 
+                            type="text" 
+                            class="form-control" 
+                            id="nombre"
+                            name="nombre"
+                            maxlength="100"
+                            placeholder="Ingrese el nombre del objetivo"
+                            required
+                          />
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">AR (Opcional)*</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control"/>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Asignar a*</label>
-                            <div class="col-sm-9">
-                              <select class="form-control">
-                                <option>Ninguno</option>
-                              </select>
-                            </div>
-                          </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Descripción<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                          <textarea 
+                            class="form-control" 
+                            id="descripcion"
+                            name="descripcion"
+                            rows="3"
+                            maxlength="200"
+                            placeholder="Ingrese la descripción del objetivo"
+                            required
+                          ></textarea>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                              <label for="subirArchivo" class="col-sm-3 col-form-label">Subir archivo</label>
-                              <input type="file" name="img[]" class="file-upload-default">
-                              <div class="col-sm-9">
-                                  <input type="text" class="form-control" disabled placeholder="Seleccione el archivo para subir">
-                                  <span class="input-group-append">
-                                  <button class="file-upload-browse btn btn-success" type="button">Subir</button>
-                                  </span>
-                              </div>
-                          </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Fecha de cumplimiento<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                          <input 
+                            type="date" 
+                            class="form-control"
+                            id="fecha_cumplimiento"
+                            name="fecha_cumplimiento"
+                            required
+                          />
+                          <small class="form-text text-muted">Seleccione la fecha límite para completar este objetivo</small>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <button type="submit" class="btn btn-success">Crear</button>
-                          <button class="btn btn-light">Cancelar</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Departamento<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                          <select 
+                            class="form-control"
+                            id="id_departamento"
+                            name="id_departamento"
+                            required
+                          >
+                            <option value="">Seleccione un departamento</option>
+                            <!-- Options will be loaded dynamically via JavaScript -->
+                          </select>
                         </div>
                       </div>
-                              </div>
-                            </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">AR (Opcional)</label>
+                        <div class="col-sm-9">
+                          <input 
+                            type="text" 
+                            class="form-control"
+                            id="ar"
+                            name="ar"
+                            maxlength="200"
+                            placeholder="Ingrese el código AR si aplica"
+                          />
+                          <small class="form-text text-muted">Código de referencia adicional</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label for="subirArchivo" class="col-sm-3 col-form-label">Archivo adjunto</label>
+                        <div class="col-sm-9">
+                          <input 
+                            type="file" 
+                            name="archivo" 
+                            class="file-upload-default"
+                            accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip"
+                          />
+                          <div class="input-group">
+                            <input 
+                              type="text" 
+                              class="form-control" 
+                              id="fileUploadLabel"
+                              disabled 
+                              placeholder="Seleccione el archivo para subir"
+                            />
+                            <button class="btn btn-success file-upload-browse" type="button">Subir</button>
                           </div>
+                          <small class="form-text text-muted">Archivos permitidos: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG, ZIP (máx. 10MB)</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-success">
+                          <i class="mdi mdi-check"></i> Crear Objetivo
+                        </button>
+                        <button type="button" class="btn btn-light">
+                          <i class="mdi mdi-close"></i> Cancelar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Hidden field for user ID -->
+                  <input type="hidden" name="id_creador" value="<?php echo $user_id; ?>" />
+                </form>
+                <!-- FORM END -->
+                
+              </div>
+            </div>
+          </div>
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-        <!-- content-wrapper ends --> 
       </div>
       <!-- main-panel ends -->
     </div>
@@ -328,6 +388,15 @@
   <!-- Custom js for this page-->
   <script src="../js/file-upload.js"></script>
   <script src="../js/dashboard.js"></script>
+  <!-- Custom js for objective form -->
+  <script src="../js/objetivo-form.js"></script>
   <!-- End custom js for this page-->
+  
+  <script>
+    // Set user ID in JavaScript for form submission
+    function getUserId() {
+      return <?php echo $user_id; ?>;
+    }
+  </script>
 </body>
 </html>
